@@ -13,7 +13,7 @@ count = 0 ;
 fun refresh_callback () {
   sprite.SetImage(one_piece_image_arr[count]);
   sprite.SetOpacity(1);
-  spr.SetZ(15);
+  sprite.SetZ(15);
   count++;
 }
 
