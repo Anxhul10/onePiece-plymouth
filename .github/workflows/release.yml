@@ -1,27 +1,21 @@
+name: Create Release
 on:
   push:
     tags:
       - 'v*'
-
-name: Create Release
-
+permissions:
+  contents: write
 jobs:
-  build:
-    name: Create Release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Create Release
-        id: create_release
-        uses: comnoco/create-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+  release:
+      name: Release pushed tag
+      runs-on: ubuntu-22.04
+      steps:
+        - name: Create release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            tag: ${{ github.ref_name }}
+          run: |
+            gh release create "$tag" \
+                --repo="$GITHUB_REPOSITORY" \
+                --title="${tag#v}" \
+                --generate-notes
