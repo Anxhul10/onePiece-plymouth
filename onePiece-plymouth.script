@@ -14,7 +14,7 @@ fun refresh_callback () {
   sprite.SetImage(one_piece_image_arr[count]);
   sprite.SetOpacity(1);
   sprite.SetZ(15);
-  count += 2;
+  count += 1;
 }
 
 Plymouth.SetRefreshFunction (refresh_callback);
