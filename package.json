@@ -1,11 +1,14 @@
 {
   "name": "onepiece-plymouth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Install the theme.",
   "main": "cli/init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "markdownlint": "markdownlint --fix README.md"
+  },
+  "bin": {
+    "onePiece-plymouth":"index.js"
   },
   "repository": {
     "type": "git",
