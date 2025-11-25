@@ -7,6 +7,16 @@ osCheck() {
     return 0
 }
 
+cat <<'ASCII'
+                    ___ _                           _                             _   _     
+  ___  _ __   ___  / _ (_) ___  ___ ___       _ __ | |_   _ _ __ ___   ___  _   _| |_| |__  
+ / _ \| '_ \ / _ \/ /_)/ |/ _ \/ __/ _ \_____| '_ \| | | | | '_ ` _ \ / _ \| | | | __| '_ \ 
+| (_) | | | |  __/ ___/| |  __/ (_|  __/_____| |_) | | |_| | | | | | | (_) | |_| | |_| | | |
+ \___/|_| |_|\___\/    |_|\___|\___\___|     | .__/|_|\__, |_| |_| |_|\___/ \__,_|\__|_| |_|
+                                             |_|      |___/                                 
+                                                                               by - Anxhul10
+ASCII
+
 if [ osCheck $1 ]; then
     if [[ "$(id -u)" -ne 0 ]]; then
         echo "Please run this as root"
@@ -20,7 +30,6 @@ if [ osCheck $1 ]; then
         sudo update-initramfs -u
         cd onePiece-plymouth/
         # ask user for fast and slow animation
-        echo "###############################################"
         echo "choose animation speed:"
         echo "1. faster animation"
         echo "2. slower animation"
