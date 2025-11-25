@@ -1,0 +1,20 @@
+for(i = 0; i <= 371; i++)
+  one_piece_image_arr[i] = Image("/media/740af368-d542-4bb1-bd29-e22ceb8c8b72-"+i+".png");
+
+pos_x = Window.GetWidth()/2 - one_piece_image_arr[0].GetWidth()/2;
+pos_y = Window.GetHeight()/2 - one_piece_image_arr[0].GetHeight()/2;
+
+sprite = Sprite(one_piece_image_arr[0]);
+sprite.SetX(pos_x);
+sprite.SetY(pos_y);
+
+count = 0 ;
+
+fun refresh_callback () {
+  sprite.SetImage(one_piece_image_arr[count]);
+  sprite.SetOpacity(1);
+  sprite.SetZ(15);
+  count += 1;
+}
+
+Plymouth.SetRefreshFunction (refresh_callback);

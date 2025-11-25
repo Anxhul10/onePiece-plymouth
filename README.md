@@ -1,6 +1,7 @@
 <!--markdownlint-disable MD013-->
 <!--markdownlint-disable MD025-->
 <!--markdownlint-disable MD041-->
+https://earthly.dev/blog/creating-and-hosting-your-own-deb-packages-and-apt-repo/?utm_source=chatgpt.com
 ## Demo Video
 [Watch the demo video](https://github.com/user-attachments/assets/dbe2b1a0-fae2-4c7c-ac44-8158c1f1186b)
 
