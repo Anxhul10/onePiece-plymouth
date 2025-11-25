@@ -28,15 +28,12 @@ if [ osCheck $1 ]; then
         read -n 1 -p "Enter the choice(eg. 1 or 2) : " choice
 
         if [ $choice == 1 ]; then
-            echo "faster animation enabled !!"
+            echo "fast animation enabled !!"
         fi
         if [ $choice == 2 ]; then
             ls
-            file=$(cat onePiece-plymouth.script)
-            for line in $file
-            do 
-                echo $line
-            done
+            cp onePiece-plymouth-slow.script onePiece-plymouth.script
+            echo "slow animation enabled !!"
         fi
     fi
 else 
