@@ -8,7 +8,7 @@
 ## Installation On Ubuntu
 
 ### method 1
-Run this to install this plymouth
+Run this to install this plymouth (**easiest**)
 
 ```bash
 curl -s -L -o /tmp/onePiece-plymouth.sh https://raw.githubusercontent.com/Anxhul10/onePiece-plymouth/refs/heads/develop/main.sh && sudo bash /tmp/onePiece-plymouth.sh
