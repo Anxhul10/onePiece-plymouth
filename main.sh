@@ -1,3 +1,7 @@
 #!/bin/bash
 
-echo "onePiece-plymouth"
+if [ "$(id -u)" -ne 0 ]; then
+    echo "please run as root"
+else 
+    echo "running as root"
+fi
