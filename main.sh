@@ -19,18 +19,24 @@ if [ osCheck $1 ]; then
         sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/onePiece-plymouth/onePiece-plymouth.plymouth $priority
         sudo update-alternatives --config default.plymouth
         sudo update-initramfs -u
+        cd onePiece-plymouth/
         # ask user for fast and slow animation
         echo "###############################################"
         echo "choose animation speed:"
         echo "1. faster animation"
         echo "2. slower animation"
         read -n 1 -p "Enter the choice(eg. 1 or 2) : " choice
-        echo "$choice hahaha"
 
-        if [ $choice eq 2 ]; then
-            echo "edit the counnt"
-        else 
-            echo "slower animation saved !!"
+        if [ $choice == 1 ]; then
+            echo "faster animation enabled !!"
+        fi
+        if [ $choice == 2 ]; then
+            ls
+            file=$(cat onePiece-plymouth.script)
+            for line in $file
+            do 
+                echo $line
+            done
         fi
     fi
 else 
