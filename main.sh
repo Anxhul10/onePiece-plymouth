@@ -2,10 +2,8 @@
 
 osCheck() {
     if [[ $OSTYPE == "linux-gnu" ]]; then
-        echo "1 from "
         return 1
     fi
-    echo "0 last"
     return 0
 }
 
@@ -31,7 +29,6 @@ if [ osCheck $1 ]; then
             printf "\nfast animation enabled !!"
         fi
         if [[ $choice == 2 ]]; then
-            ls
             cp onePiece-plymouth-slow.script onePiece-plymouth.script
             printf "slow animation enabled !!"
         fi
