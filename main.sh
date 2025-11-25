@@ -11,9 +11,14 @@ osCheck() {
 
 if [ osCheck $1 ]; then
     if [ "$(id -u)" -ne 0 ]; then
-        echo "not root"
+        echo "Please run this as root"
     else 
-        echo "root"
+        cd  /usr/share/plymouth/themes
+        sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
+        sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/onePiece-plymouth/onePiece-plymouth.plymouth 250
+        sudo update-alternatives --config default.plymouth
+        sudo update-initramfs -u
+        # ask user for fast and slow animation
     fi
 else 
     echo "Please use linux-gnu"
