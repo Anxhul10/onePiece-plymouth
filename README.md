@@ -1,21 +1,26 @@
 <!--markdownlint-disable MD013-->
 <!--markdownlint-disable MD025-->
 <!--markdownlint-disable MD041-->
-https://earthly.dev/blog/creating-and-hosting-your-own-deb-packages-and-apt-repo/?utm_source=chatgpt.com
 ## Demo Video
+
 [Watch the demo video](https://github.com/user-attachments/assets/dbe2b1a0-fae2-4c7c-ac44-8158c1f1186b)
 
-## Credits
-Original artwork: [One Piece Logo by Miiizi](https://pin.it/5R9bQJWi4)
-
-
 ## Installation On Ubuntu
+
+Run this to install this plymouth
+
+```bash
+curl -s -L -o /tmp/onePiece-plymouth.sh https://raw.githubusercontent.com/Anxhul10/onePiece-plymouth/refs/heads/develop/main.sh && sudo bash /tmp/onePiece-plymouth.sh
+```
+
+### or
 
 clone this repo at /usr/share/plymouth/themes
 
 ```bash
 sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
 ```
+
 Install the theme.
 
 ```bash
@@ -147,3 +152,7 @@ cd /usr/share/plymouth/themes
 ```bash
 sudo cp -r ~/CodeVault/github/onePiece-plymouth .
 ```
+
+## Credits
+
+Original artwork: [One Piece Logo by Miiizi](https://pin.it/5R9bQJWi4)
