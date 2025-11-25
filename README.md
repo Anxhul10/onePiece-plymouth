@@ -7,13 +7,14 @@
 
 ## Installation On Ubuntu
 
+### method 1
 Run this to install this plymouth
 
 ```bash
 curl -s -L -o /tmp/onePiece-plymouth.sh https://raw.githubusercontent.com/Anxhul10/onePiece-plymouth/refs/heads/develop/main.sh && sudo bash /tmp/onePiece-plymouth.sh
 ```
 
-### or
+### method 2
 
 clone this repo at /usr/share/plymouth/themes
 
@@ -47,7 +48,7 @@ If you want to install this on < Ubuntu 16.04, change the path from /usr/share/p
 
 ### METHOD 1
 
-#### 1. clone this repo at /ust/share/plymouth/themes
+#### 1. clone this repo at /usr/share/plymouth/themes
 
   ```bash
   sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
