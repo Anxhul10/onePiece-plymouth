@@ -13,6 +13,7 @@ if [ osCheck $1 ]; then
     else 
         read -p "Enter the priority of plymouth : " priority < /dev/tty
         cd  /usr/share/plymouth/themes
+        sudo rm -rf onePiece-plymouth
         sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
         sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/onePiece-plymouth/onePiece-plymouth.plymouth $priority
         sudo update-alternatives --config default.plymouth
