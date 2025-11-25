@@ -1,7 +1,7 @@
 #!/bin/bash
 
 osCheck() {
-    if [ $OSTYPE == "linux-gnu" ]; then
+    if [[ $OSTYPE == "linux-gnu" ]]; then
         echo "1 from "
         return 1
     fi
@@ -10,7 +10,7 @@ osCheck() {
 }
 
 if [ osCheck $1 ]; then
-    if [ "$(id -u)" -ne 0 ]; then
+    if [[ "$(id -u)" -ne 0 ]]; then
         echo "Please run this as root"
     else 
         read -p "Enter the priority of plymouth : " priority
@@ -27,13 +27,13 @@ if [ osCheck $1 ]; then
         echo "2. slower animation"
         read -n 1 -p "Enter the choice(eg. 1 or 2) : " choice
 
-        if [ $choice == 1 ]; then
-            echo "fast animation enabled !!"
+        if [[ $choice == 1 ]]; then
+            printf "\nfast animation enabled !!"
         fi
-        if [ $choice == 2 ]; then
+        if [[ $choice == 2 ]]; then
             ls
             cp onePiece-plymouth-slow.script onePiece-plymouth.script
-            echo "slow animation enabled !!"
+            printf "slow animation enabled !!"
         fi
     fi
 else 
