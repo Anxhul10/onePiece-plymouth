@@ -46,7 +46,13 @@ if [ osCheck $1 ]; then
             fi
         elif [ "$NAME" = "Fedora Linux" ]; then
             # install dependency on each install (redundant process)
-            sudo dnf install plymouth-theme-script git
+            echo " Is plymouth-theme-script installed in your Fedora Linux ? y/n"
+            read answer
+            if [ "$answer" != "${answer#[Yy]}" ] ;then 
+                echo "\nskipping plymouth-theme-script installation!!"
+            else
+                sudo dnf install plymouth-theme-script git
+            fi
             cd  /usr/share/plymouth/themes
             sudo rm -rf onePiece-plymouth
             sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
