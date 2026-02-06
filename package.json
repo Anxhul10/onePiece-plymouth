@@ -5,7 +5,8 @@
   "main": "cli/init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "markdownlint": "markdownlint --fix README.md"
+    "markdownlint": "markdownlint --fix README.md",
+    "cs": " changeset && changeset version"
   },
   "bin": {
     "onePiece-plymouth": "index.js"
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/Anxhul10/onePiece-plymouth#readme",
   "dependencies": {
+    "@changesets/cli": "^2.29.8",
     "markdownlint": "^0.38.0"
   }
 }
