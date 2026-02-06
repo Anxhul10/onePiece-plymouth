@@ -45,14 +45,14 @@ if [ osCheck $1 ]; then
                 printf "slow animation enabled !!"
             fi
         elif [ "$NAME" = "Fedora Linux" ]; then
-            echo "fedora linux"
             # install dependency on each install (redundant process)
             sudo dnf install plymouth-theme-script git
             cd  /usr/share/plymouth/themes
             sudo rm -rf onePiece-plymouth
             sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
             sudo plymouth-set-default-theme onePiece-plymouth -R
-            sudo dracut --force
+            sudo dracut --
+            cd onePiece-plymouth/
             # ask user for fast and slow animation
             echo "choose animation speed:"
             echo "1. faster animation"
