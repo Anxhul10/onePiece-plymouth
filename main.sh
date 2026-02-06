@@ -44,6 +44,28 @@ if [ osCheck $1 ]; then
                 cp onePiece-plymouth-slow.script onePiece-plymouth.script
                 printf "slow animation enabled !!"
             fi
+        elif [ "$NAME" = "Fedora Linux"]; then
+            echo "fedora linux"
+            # install dependency on each install (redundant process)
+            sudo dnf install plymouth-theme-script git
+            cd  /usr/share/plymouth/themes
+            sudo rm -rf onePiece-plymouth
+            sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
+            sudo plymouth-set-default-theme onePiece-plymouth -R
+            sudo dracut --force
+            # ask user for fast and slow animation
+            echo "choose animation speed:"
+            echo "1. faster animation"
+            echo "2. slower animation"
+            read -n 1 -p "Enter the choice(eg. 1 or 2) : " choice < /dev/tty
+
+            if [[ $choice == 1 ]]; then
+                printf "\nfast animation enabled !!"
+            fi
+            if [[ $choice == 2 ]]; then
+                cp onePiece-plymouth-slow.script onePiece-plymouth.script
+                printf "slow animation enabled !!"
+            fi
         else 
             echo "Currently, this CLI supports Ubuntu and Fedora."
             echo "If your Linux distribution is not supported, please open an issue at:"
