@@ -44,7 +44,7 @@ if [ osCheck $1 ]; then
                 cp onePiece-plymouth-slow.script onePiece-plymouth.script
                 printf "slow animation enabled !!"
             fi
-        elif [ "$NAME" = "Fedora Linux"]; then
+        elif [ "$NAME" = "Fedora Linux" ]; then
             echo "fedora linux"
             # install dependency on each install (redundant process)
             sudo dnf install plymouth-theme-script git
@@ -77,4 +77,3 @@ if [ osCheck $1 ]; then
 else 
     echo "Please use linux-gnu"
 fi
-
