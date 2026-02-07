@@ -57,7 +57,7 @@ if [ osCheck $1 ]; then
             sudo rm -rf onePiece-plymouth
             sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
             sudo plymouth-set-default-theme onePiece-plymouth -R
-            sudo dracut --
+            sudo dracut --force
             cd onePiece-plymouth/
             # ask user for fast and slow animation
             echo "choose animation speed:"
