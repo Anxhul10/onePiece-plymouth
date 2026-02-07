@@ -3,38 +3,57 @@
 <!--markdownlint-disable MD041-->
 ## Demo Video
 
-[Watch the demo video](https://github.com/user-attachments/assets/dbe2b1a0-fae2-4c7c-ac44-8158c1f1186b)
+[Watch the demo video](https://vimeo.com/1121696476)
 
-## Installation On Ubuntu
-
-### method 1
-Run this to install this plymouth (**easiest**)
+### Installation on Ubuntu & Fedora (Single CLI - Easiest)
 
 ```bash
 curl -s -L -o /tmp/onePiece-plymouth.sh https://raw.githubusercontent.com/Anxhul10/onePiece-plymouth/refs/heads/develop/main.sh && sudo bash /tmp/onePiece-plymouth.sh
 ```
 
-### method 2
+## Installation On Fedora Linux
+1. change directory
 
-clone this repo at /usr/share/plymouth/themes
+```
+cd  /usr/share/plymouth/themes
+```
+
+2. clone repo
+```
+sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
+```
+
+3. set plymouth theme
+```
+sudo plymouth-set-default-theme onePiece-plymouth -R
+```
+
+4. manually rebuild initramfs
+```
+sudo dracut --force
+```
+
+## Installation On Ubuntu
+
+1. clone this repo at /usr/share/plymouth/themes
 
 ```bash
 sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
 ```
 
-Install the theme.
+2. Install the theme.
 
 ```bash
     sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/onePiece-plymouth/onePiece-plymouth.plymouth 120
 ```
 
-Select the default theme.
+3. Select the default theme.
 
 ```bash
     sudo update-alternatives --config default.plymouth
 ```
 
-Update the initramfs image.
+4. Update the initramfs image.
 
 ```bash
     sudo update-initramfs -u
