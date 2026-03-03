@@ -21,7 +21,7 @@ if [ osCheck $1 ]; then
     if [[ "$(id -u)" -ne 0 ]]; then
         echo "Please run this as root"
     else 
-        . /etc/os-release
+        source /etc/os-release
         if [ "$NAME" = "Ubuntu" ]; then
             read -p "Enter the priority of plymouth : " priority < /dev/tty
             cd  /usr/share/plymouth/themes
@@ -59,6 +59,31 @@ if [ osCheck $1 ]; then
             sudo plymouth-set-default-theme onePiece-plymouth -R
             sudo dracut --force
             cd onePiece-plymouth/
+            # ask user for fast and slow animation
+            echo "choose animation speed:"
+            echo "1. faster animation"
+            echo "2. slower animation"
+            read -n 1 -p "Enter the choice(eg. 1 or 2) : " choice < /dev/tty
+
+            if [[ $choice == 1 ]]; then
+                printf "\nfast animation enabled !!"
+            fi
+            if [[ $choice == 2 ]]; then
+                cp onePiece-plymouth-slow.script onePiece-plymouth.script
+                printf "slow animation enabled !!"
+            fi
+        elif [ "$NAME" = "Arch Linux" ]; then
+            echo " Is plymouth installed in your Arch Linux ? y/n"
+            read answer
+            if [ "$answer" != "${answer#[Yy]}" ] ;then 
+                echo "skipping plymouth installation!!"
+            else
+                sudo pacman -S plymouth
+                sudo systemctl enable plymouth-start.service
+            fi
+            cd  /usr/share/plymouth/themes
+            sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
+            sudo plymouth-set-default-theme -R onePiece-plymouth
             # ask user for fast and slow animation
             echo "choose animation speed:"
             echo "1. faster animation"
