@@ -5,7 +5,7 @@
 
 [Watch the demo video](https://vimeo.com/1121696476)
 
-### Installation on Ubuntu & Fedora (Single CLI - Easiest)
+### Installation on Ubuntu ,Fedora & Arch Linux(Single CLI - Easiest)
 
 ```bash
 curl -s -L -o /tmp/onePiece-plymouth.sh https://raw.githubusercontent.com/Anxhul10/onePiece-plymouth/refs/heads/develop/main.sh && sudo bash /tmp/onePiece-plymouth.sh
@@ -62,6 +62,24 @@ sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
 Now reboot.
 
 If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the PlymouthTheme-Cat.plymouth file also.
+
+## Installation On Arch Linux
+
+1. clone this repo at /usr/share/plymouth/themes
+
+```bash
+sudo git clone https://github.com/Anxhul10/onePiece-plymouth.git
+```
+2. install plymouth if not installed 
+```
+sudo pacman -S plymouth
+sudo systemctl enable plymouth-start.service
+```
+3. set this theme as default 
+```
+sudo plymouth-set-default-theme -R onePiece-plymouth
+```
+Now reboot. 
 
 ## Development
 

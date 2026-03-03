@@ -22,6 +22,7 @@ if [ osCheck $1 ]; then
         echo "Please run this as root"
     else 
         source /etc/os-release
+        echo -e "\e[31m$NAME detected !!\e[0m"
         if [ "$NAME" = "Ubuntu" ]; then
             read -p "Enter the priority of plymouth : " priority < /dev/tty
             cd  /usr/share/plymouth/themes
@@ -44,6 +45,7 @@ if [ osCheck $1 ]; then
                 cp onePiece-plymouth-slow.script onePiece-plymouth.script
                 printf "slow animation enabled !!"
             fi
+            printf "\n\e[32mPlease restart your system to see Plymouth. !!\e[0m\n"
         elif [ "$NAME" = "Fedora Linux" ]; then
             # install dependency on each install (redundant process)
             echo " Is plymouth-theme-script installed in your Fedora Linux ? y/n"
@@ -72,6 +74,7 @@ if [ osCheck $1 ]; then
                 cp onePiece-plymouth-slow.script onePiece-plymouth.script
                 printf "slow animation enabled !!"
             fi
+            printf "\n\e[32mPlease restart your system to see Plymouth. !!\e[0m\n"
         elif [ "$NAME" = "Arch Linux" ]; then
             echo " Is plymouth installed in your Arch Linux ? y/n"
             read answer
@@ -97,6 +100,7 @@ if [ osCheck $1 ]; then
                 cp onePiece-plymouth-slow.script onePiece-plymouth.script
                 printf "slow animation enabled !!"
             fi
+            printf "\n\e[32mPlease restart your system to see Plymouth. !!\e[0m\n"
         else 
             echo "Currently, this CLI supports Ubuntu and Fedora."
             echo "If your Linux distribution is not supported, please open an issue at:"
