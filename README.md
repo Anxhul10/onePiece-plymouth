@@ -5,6 +5,8 @@
 
 [Watch the demo video](https://vimeo.com/1121696476)
 
+<img width="400" height="225" alt="one_piece_plymouth (1080p)" src="https://github.com/user-attachments/assets/2a3dcdfc-6d4f-4109-8a90-1b7af520e39a" />
+
 ### Installation on Ubuntu ,Fedora & Arch Linux(Single CLI - Easiest)
 
 ```bash
